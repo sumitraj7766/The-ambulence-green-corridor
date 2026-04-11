@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --bg: #0a0a0a;
+  --ink: #ffffff;
+  --line: #262626;
+  --accent: #ef4444;
+  --success: #22c55e;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.grid-line {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.node-active {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 8px var(--accent));
+}
+
+.path-line {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-dasharray: 5;
+  animation: dash 1s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
